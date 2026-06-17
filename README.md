@@ -1,10 +1,5 @@
 <div align="center">
 
-```
-▀█▀ █▀▀ █▀▀ █░█   ░░█ █▀█ █▄▄ █▀   █▀ █▀█ █▀█ █ █▄░█
-░█░ ██▄ █▄▄ █▀█   █▄█ █▄█ █▄█ ▄█   ▄█ █▀▀ █▀█ █ █░▀█
-```
-
 ### 📊 Mercado Laboral Tech
 #### ETL Pipeline · Dashboard Interactivo · Datos Abiertos
 
