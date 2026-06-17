@@ -5,13 +5,12 @@
 ░█░ ██▄ █▄▄ █▀█   █▄█ █▄█ █▄█ ▄█   ▄█ █▀▀ █▀█ █ █░▀█
 ```
 
-### 📊 Mercado Laboral Tech en España
+### 📊 Mercado Laboral Tech
 #### ETL Pipeline · Dashboard Interactivo · Datos Abiertos
 
 ![Python](https://img.shields.io/badge/Python-3.13-ff6b35?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-ETL-ff9a3c?style=for-the-badge&logo=pandas&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-ff4b6e?style=for-the-badge&logo=streamlit&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-DB-ffcc5c?style=for-the-badge&logo=postgresql&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-En%20construcción-ff6b35?style=for-the-badge)
 
 </div>
@@ -20,12 +19,14 @@
 
 ## 🌆 ¿De qué va esto?
 
-Pipeline ETL completo que extrae, transforma y carga datos del mercado laboral tech, combinando un dataset internacional con fuentes oficiales españolas (SEPE), para responder preguntas como:
+Pipeline ETL completo que extrae, transforma y carga datos del mercado laboral tech a nivel internacional, para responder preguntas como:
 
 - 🔥 ¿Qué roles tech están mejor pagados en Europa?
 - 📡 ¿Ha crecido el trabajo remoto en los últimos años?
 - 🎯 ¿Qué nivel de experiencia tiene más demanda?
 - 📈 ¿Cómo han evolucionado los salarios desde 2020?
+
+> 🔎 **Nota metodológica:** este proyecto evaluó inicialmente cruzar estos datos con estadísticas oficiales del mercado laboral español (SEPE), pero la fuente abierta disponible solo desagrega por sector macro (Agricultura/Industria/Construcción/Servicios), sin granularidad suficiente para aislar el sector tech. Se descartó esa integración para no forzar conclusiones poco rigurosas — documentado en `notebooks/02_sepe_eda.ipynb`.
 
 ---
 
@@ -35,19 +36,17 @@ Pipeline ETL completo que extrae, transforma y carga datos del mercado laboral t
 |------|-----------|
 | **Extracción** | Python · pandas |
 | **Transformación** | pandas · numpy |
-| **Carga** | SQLAlchemy · PostgreSQL |
 | **Visualización** | matplotlib · seaborn |
 | **Dashboard** | Streamlit |
-| **Entorno** | venv · python-dotenv |
+| **Entorno** | venv |
 
 ---
 
-## 🗂️ Fuentes de datos
+## 🗂️ Fuente de datos
 
 | Fuente | Descripción |
 |--------|-------------|
-| [Jobs in Data – Kaggle](https://www.kaggle.com/datasets/hummaamqaasim/jobs-in-data) | 9.355 registros de empleos tech internacionales |
-| [SEPE – datos.gob.es](https://datos.gob.es) | Contratos en actividades informáticas en España |
+| [Jobs in Data – Kaggle](https://www.kaggle.com/datasets/hummaamqaasim/jobs-in-data) | 9.355 registros de empleos tech internacionales (2020-2023) |
 
 ---
 
@@ -59,15 +58,15 @@ tech-jobs-spain-analysis/
 │   ├── raw/               ← datasets originales sin tocar
 │   └── processed/         ← datos limpios listos para análisis
 ├── 📓 notebooks/
-│   └── 01_eda.ipynb       ← exploración inicial
+│   ├── 01_eda.ipynb       ← exploración inicial
+│   └── 02_sepe_eda.ipynb  ← fuente evaluada y descartada (ver nota metodológica)
 ├── ⚙️ src/
 │   ├── extract.py
 │   ├── transform.py
 │   └── load.py
 ├── 📊 dashboard/
 │   └── app.py             ← Streamlit app
-├── requirements.txt
-└── .env.example
+└── requirements.txt
 ```
 
 ---
@@ -87,10 +86,7 @@ source venv/bin/activate     # macOS/Linux
 # 3. Instala dependencias
 pip install -r requirements.txt
 
-# 4. Configura variables de entorno
-cp .env.example .env
-
-# 5. Lanza el dashboard
+# 4. Lanza el dashboard
 streamlit run dashboard/app.py
 ```
 
@@ -112,11 +108,10 @@ streamlit run dashboard/app.py
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conecta-ff6b35?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mari-c-pastor-torres/)
 [![GitHub](https://img.shields.io/badge/GitHub-OnisaDev-ff9a3c?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OnisaDev)
 
-
 </div>
 
 ---
 
 <div align="center">
-<sub>Construido con 🌆 y muchas horas de pandas</sub>
+<sub>Construido con muchas horas de pandas</sub>
 </div>
