@@ -6,7 +6,9 @@
 ![Python](https://img.shields.io/badge/Python-3.13-ff6b35?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-ETL-ff9a3c?style=for-the-badge&logo=pandas&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-ff4b6e?style=for-the-badge&logo=streamlit&logoColor=white)
-![Status](https://img.shields.io/badge/Status-En%20construcción-ff6b35?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Deployed-4CAF50?style=for-the-badge)
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tech-jobs-analysis.streamlit.app)
 
 </div>
 
@@ -48,17 +50,17 @@ Pipeline ETL completo que extrae, transforma y carga datos del mercado laboral t
 ## 🏗️ Estructura del proyecto
 
 ```
-tech-jobs-spain-analysis/
+tech-jobs-analysis/
 ├── 📂 data/
 │   ├── raw/               ← datasets originales sin tocar
-│   └── processed/         ← datos limpios listos para análisis
+│   └── processed/         ← datos limpios y gráficos generados
 ├── 📓 notebooks/
-│   ├── 01_eda.ipynb       ← exploración inicial
-│   └── 02_sepe_eda.ipynb  ← fuente evaluada y descartada (ver nota metodológica)
+│   ├── 01_eda.ipynb           ← exploración inicial
+│   ├── 02_sepe_eda.ipynb      ← fuente evaluada y descartada
+│   └── 03_visualizations.ipynb ← gráficos estáticos
 ├── ⚙️ src/
-│   ├── extract.py
-│   ├── transform.py
-│   └── load.py
+│   ├── transform.py       ← limpieza y feature engineering
+│   └── queries.py         ← funciones de análisis
 ├── 📊 dashboard/
 │   └── app.py             ← Streamlit app
 └── requirements.txt
@@ -89,7 +91,11 @@ streamlit run dashboard/app.py
 
 ## 📈 Insights principales
 
-> 🔄 *En construcción — se actualizará al finalizar el análisis*
+- 🏆 **Analytics Engineering Manager** es el rol mejor pagado con una media de $399.880, seguido de Data Science Tech Lead ($375.000)
+- 🏠 El trabajo **presencial domina con un 61.3%** de las ofertas — el remoto representa el 36.7%, desmintiendo la narrativa de que el trabajo tech es mayoritariamente remoto
+- 📉 El trabajo remoto **cayó del 54.3% en 2021 al 32.5% en 2023** — una tendencia clara de vuelta a la oficina tras el pico post-pandemia
+- 📊 Las ofertas tech se **multiplicaron por 100 entre 2020 y 2023** — de 71 a 7.453 registros, reflejando el boom del sector
+- 💰 La brecha salarial por experiencia es significativa: **Junior ($88.535) vs Executive ($189.463)** — más del doble
 
 ---
 
